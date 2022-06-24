@@ -1,3 +1,4 @@
+export * from './Accordion'
 export { default as Button } from './Button'
 export * from './Checkbox'
 export * from './Flex'

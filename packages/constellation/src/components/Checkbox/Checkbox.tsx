@@ -41,6 +41,7 @@ const Label = styled('label')`
   line-height: 1;
   user-select: none;
   padding-left: 15px;
+  font-family: 'Inter';
 `
 
 export const Checkbox = () => (
