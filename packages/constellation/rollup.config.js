@@ -8,7 +8,9 @@ import typescript from '@rollup/plugin-typescript'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
-import { visualizer } from "rollup-plugin-visualizer";
+import { visualizer } from 'rollup-plugin-visualizer'
+import linaria from '@linaria/rollup'
+import css from 'rollup-plugin-css-only'
 
 const packageJson = require('./package.json')
 
@@ -18,12 +20,19 @@ export default (args) => {
 
   delete args.analyze_bundle
   delete args.analyze_bundle_json
-  
+
   const plugins = [
     peerDepsExternal(),
     resolve(),
     commonjs(),
     typescript({ tsconfig: './tsconfig.json' }),
+    linaria({
+      displayName: true,
+      sourceMap: process.env.NODE_ENV !== 'production',
+    }),
+    css({
+      output: 'styles.css',
+    }),
     babel({ babelHelpers: 'runtime' }),
     terser(),
   ]
@@ -32,8 +41,8 @@ export default (args) => {
     plugins.push(
       visualizer({
         sourcemap: true,
-        open: true
-      })
+        open: true,
+      }),
     )
   }
 
@@ -41,8 +50,8 @@ export default (args) => {
     plugins.push(
       visualizer({
         sourcemap: true,
-        json: true
-      })
+        json: true,
+      }),
     )
   }
   return [
