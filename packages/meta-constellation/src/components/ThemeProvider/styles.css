@@ -355,13 +355,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -542,8 +535,8 @@ video {
   --color-background-green: var(--color-green-100);
   --color-background-red: var(--color-red-100);
   --color-background-orange: var(--color-orange-100);
-  --color-shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.15);
-  --color-shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.06);
+  --shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  --shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.06);
 }
 
 .theme-dark {
@@ -563,8 +556,8 @@ video {
   --color-background-green: var(--color-green-100);
   --color-background-red: var(--color-red-100);
   --color-background-orange: var(--color-orange-100);
-  --color-shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.12);
-  --color-shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.12);
+  --shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.12);
+  --shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.12);
 }
 
 *, ::before, ::after {
@@ -782,6 +775,11 @@ video {
 
 .italic {
   font-style: italic;
+}
+
+.drop-shadow-control {
+  --tw-drop-shadow: drop-shadow(var(--shadow-control)) drop-shadow(var(--shadow-control-sm));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .focus\:outline-none:focus {

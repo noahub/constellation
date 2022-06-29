@@ -8,22 +8,22 @@ const ThemeProvider = ({
   colorOverride = {},
 }: {
   children: React.ReactNode
+  theme: string
   colorOverride: {
     primary?: string
   }
-  theme: string
 }) => {
   const [colorOverrideStyles, setColorOverrideStyles] = useState({})
 
   useEffect(() => {
-    const newColorOverrideStyles = {} as { [key: string]: string }
+    let newColorOverrideStyles = {}
 
-    Object.keys(colorOverride).map(
-      // eslint-disable-next-line no-return-assign
-      (color) =>
-        (newColorOverrideStyles[`--color-${color}`] =
-          colorOverride[color as keyof typeof colorOverride]!),
-    )
+    Object.keys(colorOverride).map(color => {
+      newColorOverrideStyles = {
+        ...newColorOverrideStyles,
+        [`--color-${color}`]: colorOverride[color as keyof typeof colorOverride],
+      }
+    })
 
     setColorOverrideStyles(newColorOverrideStyles)
   }, [colorOverride])

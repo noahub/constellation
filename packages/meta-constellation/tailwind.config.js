@@ -153,11 +153,10 @@ module.exports = {
         silver: 'var(--color-tiers-silver)',
         gold: 'var(--color-tiers-gold)',
       },
-
-      extend: {
-        dropShadow: {
-          control: ['var(--color-shadow-control)', 'var(--color-shadow-control-sm)'],
-        },
+    },
+    extend: {
+      dropShadow: {
+        control: ['var(--shadow-control)', 'var(--shadow-control-sm)'],
       },
     },
   },
