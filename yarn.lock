@@ -4877,6 +4877,7 @@ __metadata:
     "@babel/preset-env": ^7.18.2
     "@babel/preset-react": ^7.17.12
     "@babel/preset-typescript": ^7.17.12
+    "@luigiminardim/storybook-addon-globals-controls": ^0.1.3
     "@mdx-js/react": ^1.6.22
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.7
     "@radix-ui/colors": 0.1.8
@@ -4898,9 +4899,7 @@ __metadata:
     "@storybook/addon-interactions": ^6.5.9
     "@storybook/addon-links": ^6.5.9
     "@storybook/addon-postcss": ^2.0.0
-    "@storybook/builder-webpack4": ^6.5.9
     "@storybook/builder-webpack5": ^6.5.9
-    "@storybook/manager-webpack4": ^6.5.9
     "@storybook/manager-webpack5": ^6.5.9
     "@storybook/react": ^6.5.9
     "@storybook/testing-library": ^0.0.13
@@ -6005,6 +6004,26 @@ __metadata:
   version: 2.0.4
   resolution: "@leichtgewicht/ip-codec@npm:2.0.4"
   checksum: 468de1f04d33de6d300892683d7c8aecbf96d1e2c5fe084f95f816e50a054d45b7c1ebfb141a1447d844b86a948733f6eebd92234da8581c84a1ad4de2946a2d
+  languageName: node
+  linkType: hard
+
+"@luigiminardim/storybook-addon-globals-controls@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "@luigiminardim/storybook-addon-globals-controls@npm:0.1.3"
+  peerDependencies:
+    "@storybook/addons": ^6.3.6
+    "@storybook/api": ^6.3.6
+    "@storybook/components": ^6.3.6
+    "@storybook/core-events": ^6.3.6
+    "@storybook/theming": ^6.3.6
+    react: ^16.8.0 || ^17.0.0
+    react-dom: ^16.8.0 || ^17.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 2845238961e9dee88784de776bd4f549efdeb5f1cb12e3f12e2e7d8d7fc616b65bde6d94dfc2763580116d7ac4627d958a3e9eab977b4638b2cbc86655d7ac2b
   languageName: node
   linkType: hard
 
@@ -7985,7 +8004,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/builder-webpack4@npm:6.5.9, @storybook/builder-webpack4@npm:^6.5.9":
+"@storybook/builder-webpack4@npm:6.5.9":
   version: 6.5.9
   resolution: "@storybook/builder-webpack4@npm:6.5.9"
   dependencies:
@@ -8843,7 +8862,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-webpack4@npm:6.5.9, @storybook/manager-webpack4@npm:^6.5.9":
+"@storybook/manager-webpack4@npm:6.5.9":
   version: 6.5.9
   resolution: "@storybook/manager-webpack4@npm:6.5.9"
   dependencies:
