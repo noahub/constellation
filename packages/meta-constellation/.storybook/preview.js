@@ -17,13 +17,12 @@ export const globalTypes = {
   },
 }
 
-const withDisplayGlobals = withGlobals((Story) => (
+const withDisplayGlobals = withGlobals((Story, globalValues) => (
   <ThemeProvider
-    theme='dark'
-    // colorOverride={globalValues.colorOverride}
+    theme={globalValues.darkMode ? 'dark' : 'light'}
+    colorOverride={globalValues.colorOverride}
   >
     <Story />
   </ThemeProvider>
 ))
-
 export const decorators = [withDisplayGlobals]
