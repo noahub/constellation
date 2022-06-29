@@ -16,16 +16,17 @@ const ThemeProvider = ({
   const [colorOverrideStyles, setColorOverrideStyles] = useState({})
 
   useEffect(() => {
-    let newColorOverrideStyles = {} as { [key: string]: string }
+    let newColorOverrideStyles = {}
 
-    Object.keys(colorOverride).map(
-      (color) => (newColorOverrideStyles[`--color-${color}`] = colorOverride[color as keyof typeof colorOverride]),
-    )
+    Object.keys(colorOverride).map(color => {
+      newColorOverrideStyles = {
+        ...newColorOverrideStyles,
+        [`--color-${color}`]: colorOverride[color as keyof typeof colorOverride],
+      }
+    })
 
     setColorOverrideStyles(newColorOverrideStyles)
   }, [colorOverride])
-
-  console.log(colorOverrideStyles)
 
   return (
     <div className={theme === 'dark' ? 'theme-dark' : 'theme-light'} style={colorOverrideStyles}>
