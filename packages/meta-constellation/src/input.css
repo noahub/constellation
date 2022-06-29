@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
     :root {
         /* Overlay */
@@ -147,8 +143,8 @@
         --color-background-red: var(--color-red-100);
         --color-background-orange: var(--color-orange-100);
 
-        --color-shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.15);
-        --color-shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.06);
+        --shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.15);
+        --shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.06);
     }
 
     .theme-dark {
@@ -169,7 +165,7 @@
         --color-background-red: var(--color-red-100);
         --color-background-orange: var(--color-orange-100);
 
-        --color-shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.12);
-        --color-shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.12);
+        --shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.12);
+        --shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.12);
     }
 }

@@ -8,7 +8,7 @@ const plugin = require('tailwindcss/plugin')
 const radix = require('tailwindcss-radix')()
 
 module.exports = {
-  content: ['./src/**/*.{ts,js,tsx,jsx}'],
+  content: ['./src/components/**/*.{ts,js,tsx,jsx}'],
   plugins: [
     radix,
     plugin(({ addVariant }) => {
@@ -153,11 +153,12 @@ module.exports = {
         silver: 'var(--color-tiers-silver)',
         gold: 'var(--color-tiers-gold)',
       },
-
-      extend: {
-        dropShadow: {
-          control: ['var(--color-shadow-control)', 'var(--color-shadow-control-sm)'],
-        },
+      white: 'var(--color-white)',
+      black: 'var(--color-black)',
+    },
+    extend: {
+      dropShadow: {
+        control: ['var(--shadow-control)', 'var(--shadow-control-sm)'],
       },
     },
   },
