@@ -1,39 +1,38 @@
 import React from 'react'
 
 import { ColorsComponent } from './Slider.types'
-import { parse } from 'css-variables-parser'
+import { getCSSVars } from './Colors.util'
 
-const Color = () => {
+const Color = ({ colorVar }: { colorVar: string }) => {
+  const color = colorVar.split('--color-')[1].replace('-', ' ')
+
   return (
     <div className='bg-white'>
-      <div className='w-24 h-12 bg-primary' />
-      color hex
+      <div className='w-24 h-12' style={{ backgroundColor: `var(${colorVar})` }} />
+      <p className='capitalize'>{color}</p>
+    </div>
+  )
+}
+
+const ColorSection = ({ colors, title }: { colors: [string]; title: string }) => {
+  return (
+    <div>
+      <h2>{title}</h2>
+
+      <div>
+        {colors.map((color, index) => (
+          <Color colorVar={color} key={index} />
+        ))}
+      </div>
     </div>
   )
 }
 
 const Colors: ColorsComponent = () => {
-  const colors = Array.from(document.styleSheets)
-    .filter(sheet => sheet.href === null || sheet.href.startsWith(window.location.origin))
-    .reduce(
-      (acc, sheet) =>
-        (acc = [
-          ...acc,
-          ...Array.from(sheet.cssRules).reduce(
-            (def, rule) =>
-              (def =
-                rule.selectorText === ':root'
-                  ? [...def, ...Array.from(rule.style).filter(name => name.startsWith('--color'))]
-                  : def),
-            [],
-          ),
-        ]),
-      [],
-    )
+  const semanticColors = getCSSVars('.theme-dark')
+  const colors = getCSSVars(':root')
 
-  console.log(colors)
-
-  return <Color />
+  return <ColorSection colors={semanticColors} title='Semantic Colors' />
 }
 
 export default Colors
