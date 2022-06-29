@@ -4913,6 +4913,7 @@ __metadata:
     autoprefixer: ^10.4.7
     babel-loader: ^8.2.5
     css-loader: ^6.7.1
+    css-variables-parser: ^1.0.1
     eslint: 7.21.0
     eslint-config-airbnb: 18.2.1
     eslint-config-constellation: "workspace:*"
@@ -14651,6 +14652,15 @@ __metadata:
     mdn-data: 2.0.14
     source-map: ^0.6.1
   checksum: 79f9b81803991b6977b7fcb1588799270438274d89066ce08f117f5cdb5e20019b446d766c61506dd772c839df84caa16042d6076f20c97187f5abe3b50e7d1f
+  languageName: node
+  linkType: hard
+
+"css-variables-parser@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "css-variables-parser@npm:1.0.1"
+  dependencies:
+    postcss: ^7.0.36
+  checksum: 8e281d650cb844edb1ceee3db2aaf9a03a423a5b5c48fbe8f7d76e2f6a89954c69fd08883cababecadc1f8a1d61ccc8a31a05948c788b485f9d2666048c2bbac
   languageName: node
   linkType: hard
 

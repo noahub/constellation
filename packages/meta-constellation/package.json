@@ -38,6 +38,7 @@
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "css-variables-parser": "^1.0.1",
     "eslint": "7.21.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-constellation": "workspace:*",
