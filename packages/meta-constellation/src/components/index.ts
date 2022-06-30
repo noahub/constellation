@@ -1,2 +1,2 @@
-export * from './Slider'
+export * from './primitives/Slider'
 export * from './ThemeProvider'

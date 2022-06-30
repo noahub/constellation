@@ -11,7 +11,7 @@ export default {
     },
   },
   component: Slider,
-  title: 'Components/Slider',
+  title: 'Primitives/Slider',
 } as ComponentMeta<SliderComponent>
 
 const Template: ComponentStory<SliderComponent> = ({ value: defaultValue = 0, ...args }) => {

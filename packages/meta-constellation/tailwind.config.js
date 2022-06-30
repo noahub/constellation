@@ -149,6 +149,7 @@ module.exports = {
         800: 'var(--color-dark-800)',
         900: 'var(--color-dark-900)',
       },
+      white: { '000': 'var(--color-white)' },
       tiers: {
         silver: 'var(--color-tiers-silver)',
         gold: 'var(--color-tiers-gold)',
