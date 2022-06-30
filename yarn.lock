@@ -4933,6 +4933,7 @@ __metadata:
     eslint-plugin-typescript-sort-keys: 1.5.0
     file-loader: ^6.2.0
     fork-ts-checker-webpack-plugin: ^7.2.11
+    get-css-variables: ^0.3.0
     html-webpack-plugin: ^5.5.0
     image-webpack-loader: ^8.1.0
     jest: ^28.1.1
@@ -17745,6 +17746,17 @@ fsevents@^1.2.7:
   version: 2.0.5
   resolution: "get-caller-file@npm:2.0.5"
   checksum: b9769a836d2a98c3ee734a88ba712e62703f1df31b94b784762c433c27a386dd6029ff55c2a920c392e33657d80191edbf18c61487e198844844516f843496b9
+  languageName: node
+  linkType: hard
+
+"get-css-variables@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "get-css-variables@npm:0.3.0"
+  dependencies:
+    css: ^3.0.0
+  bin:
+    get-css-variables: bin/get-css-variables.js
+  checksum: cf436e5cef25e8559de5775d58de4d40de3169ca4aa9d071451c7b6c2269911cd3c88ea1ae656ffa97cd7171eca60a5de13d8ce0e9c2af5f36631f1139c6ab22
   languageName: node
   linkType: hard
 

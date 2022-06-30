@@ -1,6 +1,7 @@
 import './styles.css'
 
 import React, { useEffect, useState } from 'react'
+import { DarkModeContext } from './themeContext'
 
 const ThemeProvider = ({
   children,
@@ -29,9 +30,11 @@ const ThemeProvider = ({
   }, [colorOverride])
 
   return (
-    <div className={theme === 'dark' ? 'theme-dark' : 'theme-light'} style={colorOverrideStyles}>
-      {children}
-    </div>
+    <DarkModeContext.Provider value={theme === 'dark'}>
+      <div className={theme === 'dark' ? 'theme-dark' : 'theme-light'} style={colorOverrideStyles}>
+        {children}
+      </div>
+    </DarkModeContext.Provider>
   )
 }
 
