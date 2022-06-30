@@ -155,6 +155,7 @@ module.exports = {
       },
       white: 'var(--color-white)',
       black: 'var(--color-black)',
+      transparent: 'var(--color-transparent)',
     },
     extend: {
       dropShadow: {
