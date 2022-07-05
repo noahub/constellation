@@ -843,6 +843,12 @@ video {
   touch-action: none;
 }
 
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -946,6 +952,10 @@ video {
 
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .text-sm {

@@ -7,6 +7,7 @@ type InputProps = {
   disabled?: boolean
   label?: string
   helperText?: string
+  password?: boolean
 }
 
 type InputComponent = FC<InputProps>

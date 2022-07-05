@@ -13,10 +13,11 @@ export default {
     prefix: {
       control: { type: 'text' },
       description: 'Prefix text',
+      defaultValue: 'Prefix',
     },
     state: {
       control: { type: 'radio', options: ['default', 'success', 'error'] },
-      description: 'State of the input',
+      description: 'Error state of the input',
       defaultValue: 'default',
     },
     disabled: {
@@ -27,17 +28,19 @@ export default {
     label: {
       control: { type: 'text' },
       description: 'Label text',
+      defaultValue: 'Label',
     },
     helperText: {
       control: { type: 'text' },
       description: 'Helper text',
+      defaultValue: 'Helper text',
     },
   },
   component: Input,
   title: 'Components/Input',
 } as ComponentMeta<InputComponent>
 
-const Template: ComponentStory<InputComponent> = ({
+const PrimaryComponent: ComponentStory<InputComponent> = ({
   placeholder,
   prefix,
   state,
@@ -57,4 +60,24 @@ const Template: ComponentStory<InputComponent> = ({
   )
 }
 
-export const Primary = Template.bind({})
+const PasswordComponent: ComponentStory<InputComponent> = ({
+  placeholder,
+  state,
+  disabled,
+  label,
+  helperText,
+}) => {
+  return (
+    <Input
+      placeholder={placeholder}
+      state={state}
+      disabled={disabled}
+      label={label}
+      helperText={helperText}
+      password
+    />
+  )
+}
+
+export const Primary = PrimaryComponent.bind({})
+export const Password = PasswordComponent.bind({})
