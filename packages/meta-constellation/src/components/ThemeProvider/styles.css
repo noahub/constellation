@@ -899,6 +899,10 @@ video {
   border-color: var(--color-warning);
 }
 
+.border-background {
+  border-color: var(--color-background);
+}
+
 .bg-background {
   background-color: var(--color-background);
 }
@@ -917,6 +921,14 @@ video {
 
 .bg-background-light {
   background-color: var(--color-background-light);
+}
+
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+.\!bg-medium {
+  background-color: var(--color-medium) !important;
 }
 
 .py-1 {

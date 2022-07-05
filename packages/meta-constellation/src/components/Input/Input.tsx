@@ -16,19 +16,20 @@ const Input: InputComponent = ({
       <label className='text-sm text-title'>{label}</label>
       <div
         className={classnames(
-          'h-12 pl-4 bg-background rounded-lg flex border border-medium items-center focus-within:border-primary',
+          'h-12 pl-4 rounded-lg flex border items-center focus-within:border-primary',
           {
+            'bg-medium border-medium': disabled,
+            'bg-background-light border-background-light': !disabled,
             'border-success': state === 'success',
             'border-error': state === 'error',
-            'bg-background-light': disabled,
           },
         )}
       >
-        {prefix?.length ? <span className='text-muted mr-4'>{prefix}</span> : null}
+        {prefix?.length ? <span className='text-muted mr-4 text-sm'>{prefix}</span> : null}
         <input
           className={classnames(
             'text-title placeholder:text-muted h-full flex-grow bg-transparent outline-none',
-            { 'text-body': disabled },
+            { 'text-muted': disabled },
           )}
           placeholder={placeholder}
           disabled={disabled}
