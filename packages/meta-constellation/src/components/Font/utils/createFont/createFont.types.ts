@@ -1,4 +1,4 @@
-import { FontSettings } from 'components/Font/Font.types'
+import { FontSettings } from '../../Font.types'
 import { FC } from 'react'
 
 type CreateFontUtility = (settings: FontSettings) => {

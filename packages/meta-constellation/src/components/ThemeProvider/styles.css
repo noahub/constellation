@@ -411,6 +411,8 @@ video {
 }
 
 :root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-feature-settings: 'zero' on, 'ss01' on;
   /* Overlay */
   --color-overlay-dark-000: rgba(13, 53, 120, 0.06);
   --color-overlay-dark-100: rgba(5, 24, 61, 0.1);
@@ -536,9 +538,9 @@ video {
   --color-background-light: var(--color-grey-000);
   --color-background: var(--color-white);
   --color-background-blue: var(--color-blue-000);
-  --color-background-green: var(--color-green-100);
-  --color-background-red: var(--color-red-100);
-  --color-background-orange: var(--color-orange-100);
+  --color-background-green: var(--color-green-000);
+  --color-background-red: var(--color-red-000);
+  --color-background-orange: var(--color-orange-000);
   --shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.15);
   --shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.06);
 }
@@ -553,13 +555,13 @@ video {
   --color-primary: var(--color-blue-400);
   --color-success: var(--color-green-400);
   --color-warning: var(--color-orange-400);
-  --color-error: var(--color-red-700);
+  --color-error: var(--color-red-400);
   --color-background-light: var(--color-dark-800);
   --color-background: var(--color-dark-900);
   --color-background-blue: var(--color-dark-600);
-  --color-background-green: var(--color-green-100);
-  --color-background-red: var(--color-red-100);
-  --color-background-orange: var(--color-orange-100);
+  --color-background-green: var(--color-green-000);
+  --color-background-red: var(--color-red-000);
+  --color-background-orange: var(--color-orange-000);
   --shadow-control: 0px 3px 8px rgba(0, 0, 0, 0.12);
   --shadow-control-sm: 0px 3px 1px rgba(0, 0, 0, 0.12);
 }
@@ -759,22 +761,6 @@ video {
   margin-right: 1rem;
 }
 
-.-mt-1 {
-  margin-top: -0.25rem;
-}
-
-.-mt-2 {
-  margin-top: -0.5rem;
-}
-
-.-mt-5 {
-  margin-top: -1.25rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -881,65 +867,75 @@ video {
   border-radius: 9999px;
 }
 
-.border {
-  border-width: 1px;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.border-medium {
-  border-color: var(--color-medium);
+.border {
+  border-width: 1px;
 }
 
 .border-background-light {
   border-color: var(--color-background-light);
 }
 
-.border-success {
-  border-color: var(--color-success);
+.border-medium {
+  border-color: var(--color-medium);
 }
 
 .border-error {
   border-color: var(--color-error);
 }
 
-.border-warning {
-  border-color: var(--color-warning);
-}
-
-.border-background {
-  border-color: var(--color-background);
+.border-success {
+  border-color: var(--color-success);
 }
 
 .bg-background {
   background-color: var(--color-background);
 }
 
-.bg-transparent {
-  background-color: var(--color-transparent);
+.bg-background-light {
+  background-color: var(--color-background-light);
 }
 
 .bg-medium {
   background-color: var(--color-medium);
 }
 
+.bg-transparent {
+  background-color: var(--color-transparent);
+}
+
 .bg-primary {
   background-color: var(--color-primary);
 }
 
-.bg-background-light {
-  background-color: var(--color-background-light);
+.bg-background-green {
+  background-color: var(--color-background-green);
 }
 
-.bg-warning {
-  background-color: var(--color-warning);
+.bg-background-orange {
+  background-color: var(--color-background-orange);
 }
 
-.\!bg-medium {
-  background-color: var(--color-medium) !important;
+.bg-background-red {
+  background-color: var(--color-background-red);
 }
 
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-\[3px\] {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .pb-1\.5 {
@@ -976,10 +972,6 @@ video {
   font-style: italic;
 }
 
-.leading-4 {
-  line-height: 1rem;
-}
-
 .text-title {
   color: var(--color-title);
 }
@@ -992,16 +984,16 @@ video {
   color: var(--color-muted);
 }
 
+.text-error {
+  color: var(--color-error);
+}
+
 .text-success {
   color: var(--color-success);
 }
 
 .text-warning {
   color: var(--color-warning);
-}
-
-.text-error {
-  color: var(--color-error);
 }
 
 .outline-none {
@@ -1037,4 +1029,20 @@ video {
 
 .theme-dark .theme-dark\:bg-dark-500 {
   background-color: var(--color-dark-500);
+}
+
+.theme-dark .theme-dark\:bg-success {
+  background-color: var(--color-success);
+}
+
+.theme-dark .theme-dark\:bg-warning {
+  background-color: var(--color-warning);
+}
+
+.theme-dark .theme-dark\:bg-error {
+  background-color: var(--color-error);
+}
+
+.theme-dark .theme-dark\:text-dark-900 {
+  color: var(--color-dark-900);
 }

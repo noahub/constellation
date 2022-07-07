@@ -1,6 +1,9 @@
 import './styles.css'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+
+import { InterFontProvider } from '../Font'
+
 import { DarkModeContext } from './themeContext'
 
 const ThemeProvider = ({
@@ -9,33 +12,41 @@ const ThemeProvider = ({
   colorOverride = {},
 }: {
   children: React.ReactNode
-  theme: string
   colorOverride: {
     primary?: string
   }
+  theme: string
 }) => {
-  const [colorOverrideStyles, setColorOverrideStyles] = useState({})
-
   useEffect(() => {
-    let newColorOverrideStyles = {}
+    if (theme === 'dark') {
+      document.body.classList.add('theme-dark')
+      document.body.classList.remove('theme-light')
+    } else {
+      document.body.classList.add('theme-light')
+      document.body.classList.remove('theme-dark')
+    }
 
-    Object.keys(colorOverride).map(color => {
-      newColorOverrideStyles = {
-        ...newColorOverrideStyles,
-        [`--color-${color}`]: colorOverride[color as keyof typeof colorOverride],
-      }
+    const overrideColors = Object.keys(colorOverride)
+    const oldOverrides = Object.values(document.body.style).filter(
+      value =>
+        value.length > 0 &&
+        value.startsWith('--color-') &&
+        !overrideColors.includes(value.split('--color-')[1]),
+    )
+
+    oldOverrides.forEach(oldOverride => {
+      document.body.style.removeProperty(oldOverride)
     })
 
-    setColorOverrideStyles(newColorOverrideStyles)
-  }, [colorOverride])
+    overrideColors.forEach(color => {
+      document.body.style.setProperty(
+        `--color-${color}`,
+        colorOverride[color as keyof typeof colorOverride],
+      )
+    })
+  }, [colorOverride, theme])
 
-  return (
-    <DarkModeContext.Provider value={theme === 'dark'}>
-      <div className={theme === 'dark' ? 'theme-dark' : 'theme-light'} style={colorOverrideStyles}>
-        {children}
-      </div>
-    </DarkModeContext.Provider>
-  )
+  return <DarkModeContext.Provider value={theme === 'dark'}>{children}</DarkModeContext.Provider>
 }
 
 export default ThemeProvider
