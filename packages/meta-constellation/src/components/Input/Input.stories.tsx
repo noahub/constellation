@@ -5,35 +5,35 @@ import { Input, InputComponent } from '.'
 
 export default {
   argTypes: {
-    placeholder: {
-      control: { type: 'text' },
-      description: 'Placeholder text',
-      defaultValue: 'Placeholder',
-    },
-    prefix: {
-      control: { type: 'text' },
-      description: 'Prefix text',
-      defaultValue: 'Prefix',
-    },
-    state: {
-      control: { type: 'radio', options: ['default', 'success', 'error'] },
-      description: 'Error state of the input',
-      defaultValue: 'default',
-    },
     disabled: {
       control: { type: 'boolean' },
-      description: 'Disable the input',
       defaultValue: false,
-    },
-    label: {
-      control: { type: 'text' },
-      description: 'Label text',
-      defaultValue: 'Label',
+      description: 'Disable the input',
     },
     helperText: {
       control: { type: 'text' },
-      description: 'Helper text',
       defaultValue: 'Helper text',
+      description: 'Helper text',
+    },
+    label: {
+      control: { type: 'text' },
+      defaultValue: 'Label',
+      description: 'Label text',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      defaultValue: 'Placeholder',
+      description: 'Placeholder text',
+    },
+    prefix: {
+      control: { type: 'text' },
+      defaultValue: 'Prefix',
+      description: 'Prefix text',
+    },
+    state: {
+      control: { options: ['default', 'success', 'error'], type: 'radio' },
+      defaultValue: 'default',
+      description: 'Error state of the input',
     },
   },
   component: Input,
@@ -41,12 +41,12 @@ export default {
 } as ComponentMeta<InputComponent>
 
 const PrimaryComponent: ComponentStory<InputComponent> = ({
+  disabled,
+  helperText,
+  label,
   placeholder,
   prefix,
   state,
-  disabled,
-  label,
-  helperText,
 }) => {
   return (
     <Input
@@ -61,11 +61,11 @@ const PrimaryComponent: ComponentStory<InputComponent> = ({
 }
 
 const PasswordComponent: ComponentStory<InputComponent> = ({
+  disabled,
+  helperText,
+  label,
   placeholder,
   state,
-  disabled,
-  label,
-  helperText,
 }) => {
   return (
     <Input

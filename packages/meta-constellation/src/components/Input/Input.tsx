@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
 import classnames from 'classnames'
+import React, { useState } from 'react'
 
 import { InputComponent } from './Input.types'
 
 const Input: InputComponent = ({
+  disabled,
+  helperText = '',
+  label = '',
+  password,
   placeholder,
   prefix,
   state,
-  disabled,
-  label = '',
-  helperText = '',
-  password,
 }) => {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
-    <div>
+    <div className='theme-light'>
       <label className='text-sm text-title select-none'>{label}</label>
       <div
         className={classnames(
           'h-12 pl-4 rounded-lg flex border items-center focus-within:border-primary',
           {
-            'bg-medium border-medium': disabled,
             'bg-background-light border-background-light': !disabled,
-            'border-success': state === 'success',
+            'bg-medium border-medium': disabled,
             'border-error': state === 'error',
+            'border-success': state === 'success',
           },
         )}
       >
@@ -48,8 +48,8 @@ const Input: InputComponent = ({
       </div>
       <span
         className={classnames('text-xs text-body mt-1 select-none', {
-          'text-success': state === 'success',
           'text-error': state === 'error',
+          'text-success': state === 'success',
         })}
       >
         {helperText}
